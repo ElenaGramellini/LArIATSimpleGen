@@ -42,6 +42,7 @@ This step is going to take quite a while... To generate ~360000 events with corr
 This setp will produce a root file called "GeneratedEvents.root"
 This file contains a TTree with the generated events. The variables stored in the TTree are:
 momentumTot, momentumX, momentumY, momentumZ, theta, phi, WC4X, WC4Y         
+
 5. Transform the TTree to a HEPEvt format (so it can be read by a LArSoft module)
 
 > generateHEPEvt.py <pdg> <fileName> <TTreeName>
@@ -49,4 +50,5 @@ momentumTot, momentumX, momentumY, momentumZ, theta, phi, WC4X, WC4Y
 Note: <fileName> <TTreeName> are optional. If you leave them blank and you haven't messed around with names in the previous steps, it should work.
 You NEED the pdg code of your particle though.
 This step will generate a text file with HEP format events.
+
 6. Take your text file with HEP format events and feed it into the LArSoft module TextFileGen. I use prodText.fcl (in the package for reference), but you're on your own on this one...
