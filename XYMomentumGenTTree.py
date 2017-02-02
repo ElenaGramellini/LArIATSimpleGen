@@ -68,7 +68,7 @@ hWC4YGen    = TH1F("hWC4YGen","hWC4YGen"  , 140 , -7.,  7.)
 
 
 # Declare outFile and arrays
-outFile = TFile("letstry.root","RECREATE")
+outFile = TFile("GeneratedEvents.root","RECREATE")
 t = TTree( 'momentum', 'tree' )
 
 momentumTot = array( 'f', [ 0 ] )
@@ -94,8 +94,8 @@ t.Branch( 'WC4Y'   , WC4Y    , 'WC4Y/F' )
 
 
 P = 0.
-for i in xrange(200000000):
-#for i in xrange(200000):
+n_tries = 200000000
+for i in xrange(n_tries):
     randP          = random.uniform(0., 2000.)
     randPhi        = random.uniform(200., 400.)
     randTheta      = random.uniform(0., 106.)

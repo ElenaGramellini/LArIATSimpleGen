@@ -30,9 +30,13 @@ This step will produce a root file called "simpleGen.root"
 
 4. Launch the generator. You can simulate the Momentum Profile alone or the Momentum Profile and the X Y position on WC4
   4.1 If you want to generate the Momentum Profile alone
+
       > myLittleGenerator3DTTree.py
+
   4.2 If you want to take into account the XY position do the following:
+
       > XYMomentumGenTTree.py
+
 in the same folder where simpleGen.root is.
 This step is going to take quite a while... To generate ~360000 events with correct XY and P, you need to throw about 200000000 tries and it take ~4 hrs
 This setp will produce a root file called "GeneratedEvents.root"
