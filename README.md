@@ -34,22 +34,22 @@ What does this package contain?
 This step will produce a root file called "simpleGen.root"
 </li>
 <li> Launch the generator. You can simulate the Momentum Profile alone or the Momentum Profile and the X Y position on WC4
-  
+<br />  
   4.1 If you want to generate the Momentum Profile alone
-
+<br />
       > myLittleGenerator3DTTree.py
-
+<br />
   4.2 If you want to take into account the XY position do the following:
-
+<br />
       > XYMomentumGenTTree.py
-
+<br />
 in the same folder where simpleGen.root is.
 This step is going to take quite a while... To generate ~360000 events with correct XY and P, you need to throw about 200000000 tries and it take ~4 hrs. This setp will produce a root file called "GeneratedEvents.root". This file contains a TTree with the generated events. The variables stored in the TTree are: momentumTot, momentumX, momentumY, momentumZ, theta, phi, WC4X, WC4Y      </li>
 
 <li> Transform the TTree to a HEPEvt format (so it can be read by a LArSoft module)
-
+<br />
 > generateHEPEvt.py <pdg> <fileName> <TTreeName>
-
+<br />
 Note: <fileName> <TTreeName> are optional. If you leave them blank and you haven't messed around with names in the previous steps, it should work.
 You NEED the pdg code of your particle though.
 This step will generate a text file with HEP format events.
