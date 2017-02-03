@@ -6,6 +6,7 @@ construct a realistic single particle MC.
 
 
 What does this package contain?
+
 0) README.md 
 1) plotDataDistributions.py      
 2) XYMomentumGenTTree.py  
@@ -16,7 +17,7 @@ What does this package contain?
 
 
 
-So, I want to generate some single particle MC... what do I need?
+<b> So, I want to generate some single particle MC... what do I need?</b>
 
 1. To download this package. And you can do so by 
  > git clone  https://github.com/ElenaGramellini/LArIATSimpleGen
@@ -29,6 +30,7 @@ So, I want to generate some single particle MC... what do I need?
 This step will produce a root file called "simpleGen.root"
 
 4. Launch the generator. You can simulate the Momentum Profile alone or the Momentum Profile and the X Y position on WC4
+  
   4.1 If you want to generate the Momentum Profile alone
 
       > myLittleGenerator3DTTree.py
@@ -38,10 +40,7 @@ This step will produce a root file called "simpleGen.root"
       > XYMomentumGenTTree.py
 
 in the same folder where simpleGen.root is.
-This step is going to take quite a while... To generate ~360000 events with correct XY and P, you need to throw about 200000000 tries and it take ~4 hrs
-This setp will produce a root file called "GeneratedEvents.root"
-This file contains a TTree with the generated events. The variables stored in the TTree are:
-momentumTot, momentumX, momentumY, momentumZ, theta, phi, WC4X, WC4Y         
+This step is going to take quite a while... To generate ~360000 events with correct XY and P, you need to throw about 200000000 tries and it take ~4 hrs. This setp will produce a root file called "GeneratedEvents.root". This file contains a TTree with the generated events. The variables stored in the TTree are: momentumTot, momentumX, momentumY, momentumZ, theta, phi, WC4X, WC4Y         
 
 5. Transform the TTree to a HEPEvt format (so it can be read by a LArSoft module)
 
