@@ -75,7 +75,7 @@ pdg       = args.pdg
 fname     = args.fname   
 treeName  = args.treeName
 
-print fname, treeName, "aaa"
+print fname, treeName
 
 f = ROOT.TFile(fname)
 t = f.Get(treeName)
@@ -85,6 +85,7 @@ filename = "LArIATHepEvt_pdg_"+ str(pdg)  +".txt"
 print "Opening the file..."
 target = open(filename, 'w')
 
+i = 0
 for event in t:
     Px      = float(event.momentumX)/1000.
     Py      = float(event.momentumY)/1000.
@@ -94,13 +95,13 @@ for event in t:
     X       = event.WC4X
     Y       = event.WC4Y
 
-    line1 = "0 1"
+    line1 = str(i) + " 1"
     target.write(line1)
     target.write("\n")
     line2 = "1 " + str(pdg) + " 0 0 0 0 "+ str(Px) + " "+ str(Py) + " "+ str(Pz) + " "+ str(Energy) + " "+ str(Mass) + " "+ str(X) + " "+ str(Y) + " -100.0 0.0"
     target.write(line2)
     target.write("\n")
-
+    i += 1
 
 
     
