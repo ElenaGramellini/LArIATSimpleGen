@@ -28,7 +28,9 @@ What does this package contain?
  e.g. you want to mimick RUN II proton at p = 200 MeV/c? Select them in DATA and feed your anatree to this package
 </li>
 <li> We want to start from the data distributions. So, Launch plotDataDistributions.py on your anatree. Like this:
+<br/>
 > plotDataDistributions.py <fileName> <TTreeName>
+<br/>
 This step will produce a root file called "simpleGen.root"
 </li>
 <li> Launch the generator. You can simulate the Momentum Profile alone or the Momentum Profile and the X Y position on WC4
