@@ -7,14 +7,15 @@ construct a realistic single particle MC.
 
 What does this package contain?
 
-0) README.md 
-1) plotDataDistributions.py      
-2) XYMomentumGenTTree.py  
-3) generateHEPEvt.py      
-4) myLittleGenerator3DTTree.py 
-5) prodText.fcl
-5) referenceTree.root	    
-
+<ol>
+  <li>README.md</li>
+  <li>plotDataDistributions.py</li>      
+  <li>XYMomentumGenTTree.py  </li>
+  <li>generateHEPEvt.py      </li>
+  <li>myLittleGenerator3DTTree.py </li>
+  <li>prodText.fcl</li>
+  <li>referenceTree.root</li>	    
+</ol>
 
 
 <b> So, I want to generate some single particle MC... what do I need?</b>
