@@ -29,7 +29,7 @@ What does this package contain?
 </li>
 <li> We want to start from the data distributions. So, Launch plotDataDistributions.py on your anatree. Like this:
 <br/><br />
-> plotDataDistributions.py <fileName> <TTreeName>
+> plotDataDistributions.py &lt fileName &gt &lt TTreeName &gt
 <br/><br />
 This step will produce a root file called "simpleGen.root"
 </li>
@@ -48,7 +48,7 @@ This step is going to take quite a while... To generate ~360000 events with corr
 
 <li> Transform the TTree to a HEPEvt format (so it can be read by a LArSoft module)
 <br /><br />
-> generateHEPEvt.py &lt pdg &gt <fileName> <TTreeName>
+> generateHEPEvt.py &lt pdg &gt &lt fileName &gt &lt TTreeName &gt
 <br /><br />
 Note: <fileName> <TTreeName> are optional. If you leave them blank and you haven't messed around with names in the previous steps, it should work.
 You NEED the pdg code of your particle though.
