@@ -48,7 +48,7 @@ This step is going to take quite a while... To generate ~360000 events with corr
 
 <li> Transform the TTree to a HEPEvt format (so it can be read by a LArSoft module)
 <br /><br />
-> generateHEPEvt.py pdg <fileName> <TTreeName>
+> generateHEPEvt.py &lt pdg &gt <fileName> <TTreeName>
 <br /><br />
 Note: <fileName> <TTreeName> are optional. If you leave them blank and you haven't messed around with names in the previous steps, it should work.
 You NEED the pdg code of your particle though.
