@@ -29,7 +29,7 @@ What does this package contain?
 </li>
 <li> We want to start from the data distributions. So, Launch plotDataDistributions.py on your anatree. Like this:
 <br/><br />
-> plotDataDistributions.py &lt fileName &gt &lt TTreeName &gt
+> python plotDataDistributions.py &lt fileName &gt &lt TTreeName &gt
 <br/><br />
 This step will produce a root file called "simpleGen.root"
 </li>
@@ -37,18 +37,18 @@ This step will produce a root file called "simpleGen.root"
 <br />  <br />
   4.1 If you want to generate the Momentum Profile alone
 <br /><br />
-      > myLittleGenerator3DTTree.py
+      >python myLittleGenerator3DTTree.py
 <br /><br />
   4.2 If you want to take into account the XY position do the following:
 <br /><br />
-      > XYMomentumGenTTree.py
+      >python XYMomentumGenTTree.py
 <br /><br />
 in the same folder where simpleGen.root is.
 This step is going to take quite a while... To generate ~360000 events with correct XY and P, you need to throw about 200000000 tries and it take ~4 hrs. This setp will produce a root file called "GeneratedEvents.root". This file contains a TTree with the generated events. The variables stored in the TTree are: momentumTot, momentumX, momentumY, momentumZ, theta, phi, WC4X, WC4Y      </li>
 
 <li> Transform the TTree to a HEPEvt format (so it can be read by a LArSoft module)
 <br /><br />
-> generateHEPEvt.py &lt pdg &gt &lt fileName &gt &lt TTreeName &gt
+> python generateHEPEvt.py &lt pdg &gt &lt fileName &gt &lt TTreeName &gt
 <br /><br />
 Note: <fileName> <TTreeName> are optional. If you leave them blank and you haven't messed around with names in the previous steps, it should work.
 You NEED the pdg code of your particle though.
