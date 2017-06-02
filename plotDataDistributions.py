@@ -57,8 +57,8 @@ for event in t:
         hwcThetaTot.Fill(event.wctrk_theta[0])
         hwcPhiTot  .Fill(event.wctrk_phi[0])
 
-        WC4x = float(event.WC4xPos[0])/10.
-        WC4y = float(event.WC4yPos[0])/10.
+        WC4x = xevent.WC4xPos[0]
+        WC4y = event.WC4yPos[0]
 
         hWC4XvsY.Fill(WC4x,WC4y)
         hPvsWC4Y.Fill(WC4y,event.wcP[0])
@@ -82,7 +82,7 @@ for event in t:
             hwcThetaVsP.Fill(event.wctrk_theta[0],event.wcP[0])
             hwcPhiVsThetaVsP.Fill(event.wctrk_theta[0],event.wctrk_phi[0]+3.14159265*2,event.wcP[0])
 
-outFile = TFile("simpleGen.root","RECREATE")
+outFile = TFile("Gen"+fname,"RECREATE")
 outFile.Add(hwcPTot)
 outFile.Add(hwcPxTot)
 outFile.Add(hwcPyTot)

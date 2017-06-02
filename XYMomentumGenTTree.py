@@ -12,9 +12,18 @@ from array import array
 import time
 from time import gmtime, strftime
 print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+import argparse
 
 
-fname = "simpleGen.root"
+# This code takes as an argument the file
+# we need to generate metadata for
+parser = argparse.ArgumentParser()
+parser.add_argument("fname"   , nargs='?', default = '../MomentumManipulation/anaTree_postTOFReco.root', type = str, help="insert fileName")
+
+
+args = parser.parse_args()
+fname     = args.fname
+
 f = ROOT.TFile(fname)
 
 # Take data histograms
@@ -68,7 +77,7 @@ hWC4YGen    = TH1F("hWC4YGen","hWC4YGen"  , 140 , -7.,  7.)
 
 
 # Declare outFile and arrays
-outFile = TFile("GeneratedEvents.root","RECREATE")
+outFile = TFile("GeneratedEvents"+fname,"RECREATE")
 t = TTree( 'momentum', 'tree' )
 
 momentumTot = array( 'f', [ 0 ] )
