@@ -1,18 +1,16 @@
-##############################################
-###      This doesn't work as I thouth     ###
-### cause I hate probability distributions ###
-##############################################
-
+print('Step 01')
+import random
 import ROOT
 from ROOT import *
 import sys,os
 import math
-import random
 from array import array
 import time
-from time import gmtime, strftime
-print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+#from time import gmtime, strftime
+#print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
 import argparse
+print('Step 02')
+
 
 
 # This code takes as an argument the file
@@ -105,10 +103,11 @@ t.Branch( 'WC4Y'   , WC4Y    , 'WC4Y/F' )
 P = 0.
 n_tries = 200000000
 for i in xrange(n_tries):
-    randP          = random.uniform(0., 2000.)
+    randP          = random.uniform(200., 1400.)
     randPhi        = random.uniform(200., 400.)
     randTheta      = random.uniform(0., 106.)
     randPhiThetaP   = random.uniform(0, 0.00013)
+    #print('randP', randP)
     import math
     binPhi   = math.ceil(randPhi-200)
     binTheta = math.ceil(randTheta)

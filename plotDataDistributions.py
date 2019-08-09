@@ -57,7 +57,7 @@ for event in t:
         hwcThetaTot.Fill(event.wctrk_theta[0])
         hwcPhiTot  .Fill(event.wctrk_phi[0])
 
-        WC4x = xevent.WC4xPos[0]
+        WC4x = event.WC4xPos[0]
         WC4y = event.WC4yPos[0]
 
         hWC4XvsY.Fill(WC4x,WC4y)
