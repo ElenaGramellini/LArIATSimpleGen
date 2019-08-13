@@ -6,8 +6,8 @@ import sys,os
 import math
 from array import array
 import time
-#from time import gmtime, strftime
-#print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+from time import gmtime, strftime
+print strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
 import argparse
 print('Step 02')
 
@@ -101,8 +101,11 @@ t.Branch( 'WC4Y'   , WC4Y    , 'WC4Y/F' )
 
 
 P = 0.
-n_tries = 200000000
+n_tries = 6000000
 for i in xrange(n_tries):
+
+    if(i%10000 == 0):
+       print('Event: ', i)
     randP          = random.uniform(200., 1400.)
     randPhi        = random.uniform(200., 400.)
     randTheta      = random.uniform(0., 106.)
@@ -132,7 +135,7 @@ for i in xrange(n_tries):
     randY    = random.uniform(-6.1,  6.7)
     binX     = math.ceil((randX - 20.)*10,)   #####
     binY     = math.ceil((randY +  7.)*10.)   #####
-    randXYP  = random.uniform(0, 2e-5)       # NEEDS CHECKING
+    randXYP  = random.uniform(1e-9, 2e-5)       # NEEDS CHECKING
     while (randXYP > hwcXVsYVsPTot.GetBinContent( int(binX), int(binY), int(binP) ) ):
         randXYP  = random.uniform(0, 0.001)    # NEEDS CHECKING
         randX    = random.uniform(21.8, 34.5) 
